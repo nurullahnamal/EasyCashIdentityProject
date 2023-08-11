@@ -12,6 +12,7 @@ namespace EasyCashIdentityProject.DtoLayer.Dtos.AppUserDtos
         //[Required(ErrorMessage="Ad Alanı Zorunludur")]
         //[Display(Name="İsim")]
         //[MaxLength(50,ErrorMessage ="En fazla 30 karakter girebilirsiniz")]
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
