@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<div class="container">
+    <br />
+    <br />
+
+    <form method="post">
+        <h2>Tasınan Mail adresi : @ViewBag.v </h2>
+        <br />
+        <label>Kullanıcı Id Değeri</label>
+        <input type="text" class="form-control" />
+
+        <label>Mail adresine gelen 6 haneli kodu</label>
+        <input type="text" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Hesabı aktifleştir</button>
+    </form>
+</div>
