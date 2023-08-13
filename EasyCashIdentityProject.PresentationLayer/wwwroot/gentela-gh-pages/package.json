@@ -32,6 +32,7 @@
   "homepage": "https://github.com/puikinsh/gentelella#readme",
   "devDependencies": {
     "browser-sync": "^2.12.10",
+    "eslint": "^8.47.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",

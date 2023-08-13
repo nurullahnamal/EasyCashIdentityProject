@@ -21,7 +21,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                ViewBag.UsdToTry=body;
+                ViewBag.UsdToTry=body.Substring(0, 8);
 
             }
 
@@ -40,7 +40,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             {
                 response2.EnsureSuccessStatusCode();
                 var body2 = await response2.Content.ReadAsStringAsync();
-                ViewBag.EurToTry = body2;
+                ViewBag.EurToTry = body2.Substring(0, 8);
 
             }
             var client3 = new HttpClient();
@@ -58,7 +58,25 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             {
                 response3.EnsureSuccessStatusCode();
                 var body3 = await response3.Content.ReadAsStringAsync();
-                ViewBag.GbpToTry = body3;
+                ViewBag.GbpToTry = body3.Substring(0, 8);
+
+            }
+            var client4 = new HttpClient();
+            var request4 = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://currency-exchange.p.rapidapi.com/exchange?from=USD&to=EUR&q=1.0"),
+                Headers =
+                {
+                 { "X-RapidAPI-Key", "da4c4353e1mshe701c3dc6cbccf3p12ec5djsn2346aa10286f" },
+                    { "X-RapidAPI-Host", "currency-exchange.p.rapidapi.com" },
+                    },
+            };
+            using (var response4 = await client4.SendAsync(request4))
+            {
+                response4.EnsureSuccessStatusCode();
+                var body4 = await response4.Content.ReadAsStringAsync();
+                ViewBag.UsdToEur = body4.Substring(0,8);
 
             }
             return View();
